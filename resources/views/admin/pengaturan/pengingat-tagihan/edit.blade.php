@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Edit Pengingat Tagihan')
+
 @section('content')
 <div class="container">
     <h4 class="mb-4">Edit Pengingat Tagihan</h4>

@@ -42,11 +42,12 @@ class PengingatTagihanController extends Controller
     // Tampilkan form edit pengingat pelanggan
     public function edit($id)
     {
-
         $pelanggan = Pelanggan::with('pengingatTagihan')->findOrFail($id);
+        $pelangganList = Pelanggan::all();  // Menambahkan daftar semua pelanggan
 
-        return view('admin.pengaturan.pengingat-tagihan._form', compact('pelanggan'));
+        return view('admin.pengaturan.pengingat-tagihan._form', compact('pelanggan', 'pelangganList'));
     }
+
 
     // Simpan perubahan pengingat tagihan
     public function update(Request $request, $id)

@@ -4,9 +4,9 @@
     <label for="pelanggan_id" class="form-label">Pelanggan</label>
     <select name="pelanggan_id" id="pelanggan_id" class="form-select" required>
         <option value="">-- Pilih Pelanggan --</option>
-        @foreach ($pelangganList as $p)
-        <option value="{{ $p->id }}" {{ old('pelanggan_id', $pengingat->pelanggan_id ?? '') == $p->id ? 'selected' : '' }}>
-            {{ $p->nama }} ({{ $p->nomor_wa }})
+        @foreach($pelangganList as $pelanggan)
+        <option value="{{ $pelanggan->id }}" {{ old('pelanggan_id', $pelanggan->id) == $pelanggan->id ? 'selected' : '' }}>
+            {{ $pelanggan->nama }}
         </option>
         @endforeach
     </select>
